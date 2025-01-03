@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pandas = "*"
+werpy = "*"
+langchain-cohere = "*"
+pypdf2 = "*"
+openpyxl = "*"
+numpy = "==2.0"
+openai-whisper = {git = "git+https://github.com/openai/whisper.git"}
+torch = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.12"
