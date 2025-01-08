@@ -6,15 +6,22 @@ import csv
 
 
 
-def FileExists(Assumption:str ,GroundTruth:str,FileList:str,Transcription_File:str):
+def FileExists(Assumption:str ,GroundTruth:str,FileList:str,Transcription_File:str,Data_Cleaning_File_Path:str):
     if os.path.exists(Assumption):
         os.remove(Assumption)
+        print(Assumption+" File Deleted")
     if os.path.exists(GroundTruth):
         os.remove(GroundTruth)
+        print(GroundTruth + " File Deleted")
     if os.path.exists(FileList):
         os.remove(FileList)
+        print(FileList + " File Deleted")
     if os.path.exists(Transcription_File):
         os.remove(Transcription_File)
+        print(Transcription_File + " File Deleted")
+    if os.path.exists(Data_Cleaning_File_Path):
+        os.remove(Transcription_File)
+        print(Data_Cleaning_File_Path + " File Deleted")
 
 
 
