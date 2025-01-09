@@ -29,11 +29,12 @@ Data_Cleaning_File_Path = "Data_Cleaning/Data_Cleaning.xlsx"
 
 
 
-#FileExists(Assumption_file,GroundTruth_file,File_List_Path,Transcription_File_Path,Data_Cleaning_File_Path)
+
+#FileExists(Assumption_file,GroundTruth_file,File_List_Path,Data_Cleaning_File_Path)
 ssl._create_default_https_context = ssl._create_unverified_context
 #file_dict = file_List(path,File_List_Path)
-asyncio.run(call_whisper2(File_List_Path,Transcription_File_Path+"_Tiny.json","tiny"))
-#data_cleaning("Transcrition/Transcrition.json","File_List/File_List.json")
+asyncio.run(call_whisper2(File_List_Path,Transcription_File_Path+"_Base.json","base"))
+#data_cleaning(Transcription_File_Path+"_Tiny.json",File_List_Path,Data_Cleaning_File_Path)
 
 
 def WriteAssumptionFile(Assumption_file:str , ModelInfor:dict):

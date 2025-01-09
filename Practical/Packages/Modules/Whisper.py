@@ -57,7 +57,7 @@ async def call_whisper2(File_List:str,Transcription_File_Path:str,Model_Name:str
         print(f"Error decoding JSON in {file_path}.")
 
 
-def data_cleaning(Transcription_File_Path:str,File_List_Path:str):
+def data_cleaning(Transcription_File_Path:str,File_List_Path:str,Data_Cleaning_File_Path:str):
     if os.path.exists(Transcription_File_Path):
         # Create and write the dictionary to the file
         with open(Transcription_File_Path, 'r') as file:
@@ -90,7 +90,7 @@ def data_cleaning(Transcription_File_Path:str,File_List_Path:str):
     }
     df = pd.DataFrame(data)
 
-    df.to_excel("../Data_Cleaning/Data_Cleaning.xlsx", index=False)  # index=False avoids writing row indices
+    df.to_excel(Data_Cleaning_File_Path, index=False)  # index=False avoids writing row indices
 
     print("Excel file created using pandas successfully!")
 
