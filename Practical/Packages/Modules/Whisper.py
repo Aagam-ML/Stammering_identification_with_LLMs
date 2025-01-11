@@ -49,7 +49,7 @@ async def call_whisper2(File_List:str,Transcription_File_Path:str,Model_Name:str
                                 with open(Transcription_File_Path, 'w') as file:
                                     json.dump(data, file, indent=4)  # Write the updated list to the file
 
-                                print(f"File updated at {Transcription_File_Path}  {counter/100}/210")
+                                print(f"File updated at {Transcription_File_Path}  {counter/100}/214")
 
     except FileNotFoundError:
         print(f"The file {file_path} does not exist.")
