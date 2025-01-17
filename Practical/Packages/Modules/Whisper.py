@@ -1,12 +1,11 @@
-import time
-
-import pandas as pd
-import whisper
 import asyncio
 import json
 import os
+import time
 import warnings
-import sys
+
+import pandas as pd
+import whisper
 
 warnings.filterwarnings("ignore", message="FP16 is not supported on CPU; using FP32 instead")
 
@@ -86,9 +85,14 @@ def data_cleaning(Transcription_File_Path:str,File_List_Path:str,Data_Cleaning_F
     # Create a DataFrame
     data = {
         "Column1": File_List,
-        "Column2": keys_list_transcribed
+        "Column2": keys_list_transcribed,
     }
     df = pd.DataFrame(data)
+    df["Column3"] = df["Column1"] == df["Column2"]  # True if equal, False otherwise
+
+    # Display the DataFrame
+
+
 
     df.to_excel(Data_Cleaning_File_Path, index=False)  # index=False avoids writing row indices
 

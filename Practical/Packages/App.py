@@ -37,7 +37,7 @@ ssl._create_default_https_context = ssl._create_unverified_context
 #asyncio.run(call_whisper2(File_List_Path,Transcription_File_Path+"_medium.json","medium"))
 
 
-data_cleaning(Transcription_File_Path+"_Large.json",File_List_Path,Data_Cleaning_File_Path)
+data_cleaning(Transcription_File_Path+"_Medium.json",File_List_Path,Data_Cleaning_File_Path)
 
 
 def WriteAssumptionFile(Assumption_file:str , ModelInfor:dict):
