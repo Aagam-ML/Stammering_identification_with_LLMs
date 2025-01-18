@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 import asyncio
 import time
-from Modules.Whisper import call_whisper2, data_cleaning
+from Modules.Whisper import call_whisper2,call_whisper3, data_cleaning
 from openpyxl import Workbook, load_workbook
 import re
 import ssl
@@ -33,11 +33,11 @@ Data_Cleaning_File_Path = "Data_Cleaning/Data_Cleaning.xlsx"
 #FileExists(Assumption_file,GroundTruth_file,File_List_Path,Data_Cleaning_File_Path)
 ssl._create_default_https_context = ssl._create_unverified_context
 #file_dict = file_List(path,File_List_Path)
-#asyncio.run(call_whisper2(File_List_Path,Transcription_File_Path+"_small.json","small"))
+asyncio.run(call_whisper3(File_List_Path,Transcription_File_Path+"largo.json","large"))
 #asyncio.run(call_whisper2(File_List_Path,Transcription_File_Path+"_medium.json","medium"))
 
 
-data_cleaning(Transcription_File_Path+"_Medium.json",File_List_Path,Data_Cleaning_File_Path)
+#data_cleaning(Transcription_File_Path+"_tiny.json",Transcription_File_Path+"_base.json",Transcription_File_Path+"_small.json",Transcription_File_Path+"_medium.json",Transcription_File_Path+"_large.json",File_List_Path,Data_Cleaning_File_Path)
 
 
 def WriteAssumptionFile(Assumption_file:str , ModelInfor:dict):
