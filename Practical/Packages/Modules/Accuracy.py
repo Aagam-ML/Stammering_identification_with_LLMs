@@ -33,3 +33,5 @@ def find_Accuracy(Assumption_file , GroundTruth_file):
     # Calculate overall accuracy
     overall_accuracy = total_matches / total_values * 100
     print(f"Overall accuracy: {overall_accuracy:.2f}%")
+
+find_Accuracy("/Volumes/HDD/Stammering_identification/Stammering_identification_with_LLMs/Practical/Packages/Predicted_Labels/chatgpt4/stammering_analysis_reanalyzed_base.xlsx","/Volumes/HDD/Stammering_identification/Stammering_identification_with_LLMs/Practical/Packages/SEP-28k_labels (1).xlsx")
