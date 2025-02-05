@@ -16,22 +16,22 @@ def find_Accuracy(Assumption_file , GroundTruth_file):
         total_matches = 0
         total_values = 0
 
-    for column in columns_to_compare:
-        if column in df1.columns and column in df2.columns:
-            # Count the number of matching values in this column
-            matches = (df1[column] == df2[column]).sum()
-            total_matches += matches
-            total_values += len(df1[column])
+        for column in columns_to_compare:
+            if column in df1.columns and column in df2.columns:
+                # Count the number of matching values in this column
+                matches = (df1[column] == df2[column]).sum()
+                total_matches += matches
+                total_values += len(df1[column])
 
-            # Print column-wise accuracy
-            column_accuracy = matches / len(df1[column]) * 100
-            print(f"Accuracy for {column}: {column_accuracy:.2f}%")
-        else:
-            print(f"Column '{column}' not found in one of the files.")
-    print(total_matches)
-    print(total_values)
-    # Calculate overall accuracy
-    overall_accuracy = total_matches / total_values * 100
-    print(f"Overall accuracy: {overall_accuracy:.2f}%")
+                # Print column-wise accuracy
+                column_accuracy = matches / len(df1[column]) * 100
+                print(f"Accuracy for {column}: {column_accuracy:.2f}%")
+            else:
+                print(f"Column '{column}' not found in one of the files.")
+        print(total_matches)
+        print(total_values)
+        # Calculate overall accuracy
+        overall_accuracy = total_matches / total_values * 100
+        print(f"Overall accuracy: {overall_accuracy:.2f}%")
 
-find_Accuracy("/Volumes/HDD/Stammering_identification/Stammering_identification_with_LLMs/Practical/Packages/Predicted_Labels/chatgpt4/stammering_analysis_reanalyzed_base.xlsx","/Volumes/HDD/Stammering_identification/Stammering_identification_with_LLMs/Practical/Packages/SEP-28k_labels (1).xlsx")
+find_Accuracy("/Volumes/HDD/Stammering_identification/Stammering_identification_with_LLMs/Practical/Packages/Predicted_Labels/chatgpt4/stammering_analysis_reanalyzed_base.xlsx","/Volumes/HDD/Stammering_identification/Stammering_identification_with_LLMs/Practical/SEP-28k_label.xlsx")
