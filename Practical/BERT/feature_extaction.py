@@ -8,7 +8,7 @@ with open('/Volumes/HDD/Stammering_identification/Stammering_identification_with
     data = json.load(f)
 
 # Extract the text values
-texts = list(data.values())[20001:]  # Limit to 500 texts
+texts = list(data.values())[:]  # Limit to 500 texts
 
 # Load pre-trained BERT model and tokenizer
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
@@ -47,4 +47,6 @@ for i in range(0, total_texts, batch_size):
 total_pooled_output = torch.cat(all_pooled_outputs, dim=0)
 
 # Save the features to a file
-torch.save(total_pooled_output, 'bert_features_5.pt')
+torch.save(total_pooled_output, '../DeepNeuralNetworkApproach/bert_features_77.pt')
+
+
