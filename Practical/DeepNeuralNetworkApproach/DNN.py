@@ -95,7 +95,7 @@ def main():
     # Load BERT features
     try:
         features = torch.load(
-            '/Volumes/HDD/Stammering_identification/Stammering_identification_with_LLMs/Practical/DeepNeuralNetworkApproach/bert_features_77.pt'
+            '/Volumes/HDD/Stammering_identification/Stammering_identification_with_LLMs/Practical/DeepNeuralNetworkApproach/bert_features_779.pt'
         ).numpy()  # Convert to numpy array
     except Exception as e:
         print(f"Error loading BERT features: {e}")
@@ -104,7 +104,7 @@ def main():
     # Load labels
     try:
         labels_df = pd.read_excel(
-            "/Volumes/HDD/Stammering_identification/Stammering_identification_with_LLMs/Practical/Random_Forest/SEP-28k_label.xlsx"
+            "/Volumes/HDD/Stammering_identification/Stammering_identification_with_LLMs/Practical/Data_imbalance/balanced_dataset_with_all_combinations.xlsx"
         )
     except Exception as e:
         print(f"Error loading labels: {e}")
