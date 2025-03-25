@@ -1,0 +1,10 @@
+# Load your dataset from an Excel file
+df = pd.read_excel('SEP-28k_label.xlsx')  # Update with your file path
+
+# Filter rows where at least one feature exists (at least one 1 in the row)
+nonzero_data = df[(df != 0).any(axis=1)]
+
+# Save the filtered data to a new Excel file
+nonzero_data.to_excel('new_data.xlsx', index=False)
+
+print("Filtered data saved to 'new_data.xlsx'.")
